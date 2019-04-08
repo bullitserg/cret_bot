@@ -36,6 +36,7 @@ def authorisation_handler(bot, update):
         # пишем данные меню в USER_DATA
         USER_DATA[chat_id]['menu'] = BotDbFunctions().get_menu(chat_id)
         USER_DATA[chat_id]['help'] = BotDbFunctions().get_help(chat_id)
+        USER_DATA[chat_id]['inn'] = BotDbFunctions().get_inn(chat_id)
     else:
         chat_info_logger(username, chat_id, 'Not correct password')
         update.message.reply_text('Введен некорректный пароль',

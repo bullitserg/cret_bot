@@ -12,6 +12,11 @@ class BotDbFunctions:
         user_password = self.BOT_DB_CONNECTION.execute_query(bot_queries.get_user_password_query % chat_id)[0][0]
         return user_password
 
+    # Функция получения инн
+    def get_inn(self, chat_id):
+        user_inn = self.BOT_DB_CONNECTION.execute_query(bot_queries.get_inn_query % chat_id)[0][0]
+        return user_inn
+
     # Функция получения help страницы
     def get_help(self, chat_id):
         help_page = '''<b>ОСНОВНОЕ МЕНЮ</b>

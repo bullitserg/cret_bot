@@ -63,7 +63,6 @@ def exit_handler(bot, update):
 @decorators.drop_dialog(USER_DATA)
 def menu_handler(bot, update):
     chat_id = update.message.chat_id
-
     if USER_DATA[chat_id]['menu']:
         USER_DATA[chat_id]['last_menu'] = 'main'
         update.message.reply_text(text='''Доступные вам команды:''',

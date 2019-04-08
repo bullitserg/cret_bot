@@ -1,6 +1,5 @@
 get_mysql_user_data = ''''''
 
-
 get_user_password_query = '''SELECT u.password
   FROM user u
   WHERE u.chat_id = %s
@@ -13,6 +12,11 @@ check_registration_query = '''SELECT u.chat_id
   AND u.archive = 0
   ;'''
 
+get_inn_query = '''SELECT u.inn
+  FROM user u
+  WHERE u.chat_id = %s
+  AND u.archive = 0
+  ;'''
 
 get_menu_query = '''SELECT
   'main' AS menu_type,
@@ -41,7 +45,6 @@ WHERE u.chat_id = %(chat_id)s
 AND u.archive = 0
 GROUP BY menu_type
 ;'''
-
 
 get_help_query = '''SELECT
   GROUP_CONCAT(
